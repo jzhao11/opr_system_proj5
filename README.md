@@ -1,2 +1,4 @@
-# opr_system_proj5
-syschronization
+# syschronization
+# project for operating system
+# author: jianfei zhao
+# github: https://github.com/jzhao11
