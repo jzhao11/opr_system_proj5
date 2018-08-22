@@ -1,24 +1,20 @@
-Name  : Jianfei Zhao
-Date  : 07/25/2018
-Class : CSC415-01
-
-Compile Instructions:
+# Build Instructions:
 make
 By using the original Makefile (with gcc command included) in the repo, the instruction "make" (under the repo csc415-p5-jzhao11/part1) can build the program and generate the executable file "threadracer".
 
 
-Run Instructions:
+# Run Instructions:
 ./threadracer
 This instruction is also executed under csc415-p5-jzhao11/part1, which runs the executable file "threadracer".
 
 
-Project Description:
+# Project Description:
 On the basis of homework4, this program simply adds several lines for synchronization, without removing any nanosleep() or modifying any other code. Specifically, this program uses mutex lock to implement synchronization.
 
 The mutex lock will be acquired and released in each thread function (adder and subtractor). In both adder and subtractor functions, there are critical sections, referring to those code lines that are trying to access the shared global variable (g_variable). To eliminate race conditions, each process should acquire mutex lock before it enters critical section and release the lock after it exits critical section. In other words, each critical section needs to be surrounded by pthread_mutex_lock and pthread_mutex_unlock to guarantee synchronization. In this way, only 1 thread can access g_variable and therefore its final value is always 0, proving that the race conditions have been removed.
 
 
-Output Sample:
+# Output Sample:
 Current Value written to Global Variable by thread:	0 is	1
 Current Value written to Global Variable by thread:	0 is	2
 Current Value written to Global Variable by thread:	1 is	1
